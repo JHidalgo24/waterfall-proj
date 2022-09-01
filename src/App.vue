@@ -1,32 +1,44 @@
 <template>
-  <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
-  </div>
+  <v-app>
+    <v-app-bar
+      app
+      color="red"
+      dark
+    >
+      <v-icon>mdi-book</v-icon>
+      &nbsp;
+      <h2>CK Training</h2>
+      <v-spacer></v-spacer>
+      <v-btn text><v-icon>mdi-account</v-icon> Sign-in </v-btn>
+      <v-btn text><v-icon>mdi-account-plus</v-icon>Register </v-btn>
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+    </v-app-bar>
+    <v-navigation-drawer  right app v-model="drawer" temporary >
+      <v-list-item-group>
+        <v-list-item>
+          Classes
+        </v-list-item>
+        <v-list-item>
+          Instructors
+        </v-list-item>
+        <v-list-item>
+          About Us
+        </v-list-item>
+      </v-list-item-group>
+    </v-navigation-drawer>
+    <v-main>
+      <router-view/>
+    </v-main>
+  </v-app>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
 
-nav {
-  padding: 30px;
-}
+export default {
+  name: 'App',
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+  data: () => ({
+    drawer:true
+  }),
+};
+</script>
