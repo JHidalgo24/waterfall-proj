@@ -3,7 +3,7 @@
   <v-parallax src="https://images5.alphacoders.com/288/thumb-1920-288919.jpg"></v-parallax>
 
   <v-row class="ma-0">
-    <v-col cols="6">
+    <v-col cols sm="12" lg="6">
       <v-card class="ma-5">
         <v-card-title>Business Model</v-card-title>
         <v-card-text>
@@ -11,7 +11,7 @@
         </v-card-text>
       </v-card>
     </v-col>
-    <v-col cols="6">
+    <v-col cols sm="12" lg="6">
       <v-card class="ma-5">
         <v-card-title>Who are we</v-card-title>
         <v-card-text>
