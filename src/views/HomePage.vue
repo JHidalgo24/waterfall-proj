@@ -4,7 +4,7 @@
 
   <v-row class="ma-0">
     <v-col cols sm="12" lg="6">
-      <v-card class="ma-5">
+      <v-card class="">
         <v-card-title>Business Model</v-card-title>
         <v-card-text>
           <p>Teach people stuff</p>
@@ -12,7 +12,7 @@
       </v-card>
     </v-col>
     <v-col cols sm="12" lg="6">
-      <v-card class="ma-5">
+      <v-card class="">
         <v-card-title>Who are we</v-card-title>
         <v-card-text>
           <p>We are a group of teachers</p>

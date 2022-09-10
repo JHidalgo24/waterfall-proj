@@ -25,7 +25,7 @@
                 <v-list-item-title>Users</v-list-item-title>
               </v-list-item-content>
             </template>
-            <v-list-item  :key="n" v-for="(user,n) in usersList" >
+            <v-list-item  :key="user.userID" v-for="(user) in usersList" >
               <UserEditComponent @remove-user="removeUser"  @add-user="addNewUser" @change-user="changeUser" :user="user"></UserEditComponent>
             </v-list-item>
 
@@ -117,7 +117,7 @@
                 <v-list-item-title>Courses</v-list-item-title>
               </v-list-item-content>
             </template>
-            <v-list-item :key="nn" v-for="(classItem, nn) in classList">
+            <v-list-item :key="classItem.classID" v-for="(classItem) in classList">
               <ClassEditComponent :users="usersList" @remove-course="removeCourse" @change-course="changeCourse" :courseThing="classItem"></ClassEditComponent>
             </v-list-item>
 
