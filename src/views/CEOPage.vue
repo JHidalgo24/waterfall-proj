@@ -19,13 +19,15 @@
 
       <v-col cols sm="12" lg="8">
         <div>
+
+          <!--User Page-->
           <v-list-group >
             <template v-slot:activator>
               <v-list-item-content>
                 <v-list-item-title>Users</v-list-item-title>
               </v-list-item-content>
             </template>
-            <v-list-item  :key="n" v-for="(user,n) in usersList" >
+            <v-list-item  :key="user.userID" v-for="(user) in usersList" >
               <UserEditComponent @remove-user="removeUser"  @add-user="addNewUser" @change-user="changeUser" :user="user"></UserEditComponent>
             </v-list-item>
 
@@ -109,13 +111,15 @@
           </v-list-group>
 
 
+
+          <!--Instructor Page-->
           <v-list-group>
             <template v-slot:activator>
               <v-list-item-content>
                 <v-list-item-title>Instructors</v-list-item-title>
               </v-list-item-content>
             </template>
-            <v-list-item :key="y" v-for="(instructor, y) in instructorList">
+            <v-list-item :key="instructor.instructorID" v-for="(instructor) in instructorList">
               <InstructorEditComponent @fire-instructor="removeInstructor" @change-instructor="changeInstructor"
                                        :instructor="instructor"></InstructorEditComponent>
             </v-list-item>
@@ -195,13 +199,15 @@
           </v-list-group>
 
 
+
+          <!--Course Page-->
           <v-list-group>
             <template v-slot:activator>
               <v-list-item-content>
                 <v-list-item-title>Courses</v-list-item-title>
               </v-list-item-content>
             </template>
-            <v-list-item :key="nn" v-for="(classItem, nn) in classList">
+            <v-list-item :key="classItem.classID" v-for="(classItem) in classList">
               <ClassEditComponent :users="usersList" @remove-course="removeCourse" @change-course="changeCourse" :courseThing="classItem"></ClassEditComponent>
             </v-list-item>
 
@@ -300,14 +306,17 @@
           </v-list-group>
 
 
+
+          <!--Admin Page-->
+
           <v-list-group>
             <template v-slot:activator>
               <v-list-item-content>
                 <v-list-item-title>Admins</v-list-item-title>
               </v-list-item-content>
             </template>
-            <v-list-item :key="y" v-for="(admin, y) in adminList">
-              <AdminEditComponent @fire-admin="fireLoser" @change-admin="changeAdmin"
+            <v-list-item :key="admin.AdminID" v-for="(admin) in adminList">
+              <AdminEditComponent @fire-admin="fireAdmin" @change-admin="changeAdmin"
                                        :admin="admin"></AdminEditComponent>
             </v-list-item>
 
@@ -453,13 +462,9 @@ export default {
       this.usersList = replacementList
     },
     changeAdmin(admin){
-      let replacementList = this.adminList
 
-      let index = this.adminList.findIndex((obj => obj.adminID === admin.adminID));
+      this.adminList[this.adminList.findIndex((obj => obj.adminID === admin.adminID))].changeAdmin(admin)
 
-      replacementList[index].changeAdmin(admin)
-
-      this.adminList = replacementList
     },
     addNewUser(){
       let sortedList = this.usersList.sort(function(a, b) {
@@ -561,14 +566,10 @@ export default {
       this.dialogAddAdmin = false;
     },
 
-    fireLoser(admin){
-      let replacementList = this.adminList
+    fireAdmin(admin){
 
-      let index = this.adminList.findIndex((obj => obj.adminID === admin.adminID));
+      this.adminList[this.adminList.findIndex((obj => obj.adminID === admin.adminID))].fireAdmin()
 
-      replacementList[index].fireAdmin()
-
-      this.adminList = replacementList
       this.dialogAddAdmin = false
     }
 

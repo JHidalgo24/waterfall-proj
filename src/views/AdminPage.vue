@@ -25,7 +25,7 @@
                 <v-list-item-title>Users</v-list-item-title>
               </v-list-item-content>
             </template>
-            <v-list-item :key="n" v-for="(user,n) in usersList">
+            <v-list-item :key="user.userID" v-for="(user) in usersList">
               <UserEditComponent @remove-user="removeUser" @change-user="changeUser" :user="user"></UserEditComponent>
             </v-list-item>
 
@@ -115,7 +115,7 @@
                 <v-list-item-title>Instructors</v-list-item-title>
               </v-list-item-content>
             </template>
-            <v-list-item :key="y" v-for="(instructor, y) in instructorList">
+            <v-list-item :key="instructor.instructorID" v-for="(instructor) in instructorList">
               <InstructorEditComponent @fire-instructor="removeInstructor" @change-instructor="changeInstructor"
                                        :instructor="instructor"></InstructorEditComponent>
             </v-list-item>
@@ -203,7 +203,7 @@
                 <v-list-item-title>Courses</v-list-item-title>
               </v-list-item-content>
             </template>
-            <v-list-item :key="nn" v-for="(classItem, nn) in classList">
+            <v-list-item :key="classItem.classID" v-for="(classItem) in classList">
               <ClassEditComponent :users="usersList" @remove-course="removeCourse" @change-course="changeCourse"
                                   :courseThing="classItem"></ClassEditComponent>
             </v-list-item>
@@ -423,16 +423,13 @@ export default {
 
     },
     changeCourse(course) {
-      let replacementList = this.classList
 
-      let index = this.classList.findIndex((obj => obj.classID === course.classID));
-
-      replacementList[index].changeCourse(course)
-
-      this.classList = replacementList
+      this.classList[this.classList.findIndex((obj => obj.classID === course.classID))].changeCourse(course)
 
     },
     removeCourse(course) {
+      console.log(course.classID + 'Course deleted')
+
       this.classList = this.classList.filter(x => x.classID !== course.classID)
     },
 
@@ -440,7 +437,7 @@ export default {
 
 
       let newID = this.classList[this.classList.length - 1].classID + 1;
-      //console.log(newID)
+      console.log(newID)
 
 
       console.log(this.missingInfo)

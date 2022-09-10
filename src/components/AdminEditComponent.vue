@@ -1,9 +1,9 @@
 <template>
   <v-list-item>
-    <p>{{ admin.firstName }} {{ admin.lastName }} <b v-show="admin.endDate !== null" style="color: red">
+    <p>{{ admin.firstName }} {{ admin.lastName }} <b v-show="admin.terminated === true" style="color: red">
       <br>Terminated on: {{ admin.endDate }}</b> </p>
     <v-spacer></v-spacer>
-    <v-btn @click="overlay = true" v-show="admin.endDate !== null" text style="background-color:indianred; ">
+    <v-btn @click="overlay = true" v-show="admin.terminated === true" text style="background-color:indianred; ">
       <span style="color: white">Cause of Termination</span>
     </v-btn>
 
@@ -11,7 +11,7 @@
       Edit
     </v-btn>
 
-    <v-btn v-show="admin.endDate === null" text @click="firePrompt" id="destroyBtn">
+    <v-btn v-show="admin.terminated === false" text @click="firePrompt" id="destroyBtn">
       Fire
     </v-btn>
 
@@ -54,7 +54,7 @@
         <v-card-actions>
           <v-btn outlined @click="dialogFireUser = !dialogFireUser" color="green">Cancel</v-btn>
           <v-spacer></v-spacer>
-          <v-btn outlined color="rgb(205,92,92)" @click="fireInstructor">Confirm</v-btn>
+          <v-btn outlined color="rgb(205,92,92)" @click="fireAdmin">Confirm</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -168,7 +168,7 @@ export default {
       this.dialogFireUser = true;
     }
     ,
-    fireInstructor() {
+    fireAdmin() {
 
       this.changeAdminData()
 
