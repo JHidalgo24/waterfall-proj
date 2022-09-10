@@ -12,7 +12,7 @@ class AdminItem {
     terminated = false;
 
     constructor(AdminID, firstName, lastName, age, gender, email, phoneNumber, startDate) {
-        this.AdminID = AdminID;
+        this.adminID = AdminID;
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;

@@ -155,12 +155,13 @@ export default {
     }
   },
   methods: {
-    changeInstructorData() {
+    async changeInstructorData() {
+
       if (this.instructorData.terminationCause === ''){
         this.instructorData.terminationCause = "No reason was listed. Contact admin J Wheezy or CK for more details"
       }
 
-      this.$emit('change-instructor', this.instructorData)
+      await this.$emit('change-instructor', this.instructorData)
 
       this.dialog = false
     },
@@ -168,9 +169,9 @@ export default {
       this.dialogFireUser = true;
     }
     ,
-    fireInstructor() {
+    async fireInstructor() {
 
-      this.changeInstructorData()
+      await this.changeInstructorData()
 
       this.$emit('fire-instructor', this.instructorData)
 

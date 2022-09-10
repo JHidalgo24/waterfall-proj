@@ -1,9 +1,9 @@
 <template>
   <v-list-item>
-    <p>{{ admin.firstName }} {{ admin.lastName }} <b v-show="admin.terminated === true" style="color: red">
+    <p>{{ admin.firstName }} {{ admin.lastName }} <b v-show="admin.endDate !== null" style="color: red">
       <br>Terminated on: {{ admin.endDate }}</b> </p>
     <v-spacer></v-spacer>
-    <v-btn @click="overlay = true" v-show="admin.terminated === true" text style="background-color:indianred; ">
+    <v-btn @click="overlay = true" v-show="admin.endDate !== null" text style="background-color:indianred; ">
       <span style="color: white">Cause of Termination</span>
     </v-btn>
 
@@ -11,7 +11,7 @@
       Edit
     </v-btn>
 
-    <v-btn v-show="admin.terminated === false" text @click="firePrompt" id="destroyBtn">
+    <v-btn v-show="admin.endDate === null" text @click="firePrompt" id="destroyBtn">
       Fire
     </v-btn>
 
@@ -155,12 +155,13 @@ export default {
     }
   },
   methods: {
-    changeAdminData() {
+    async changeAdminData() {
+
       if (this.adminData.terminationCause === ''){
         this.adminData.terminationCause = "No reason was listed. Contact admin J Wheezy or CK for more details"
       }
 
-      this.$emit('change-admin', this.adminData)
+      await this.$emit('change-admin', this.adminData)
 
       this.dialog = false
     },
@@ -168,11 +169,11 @@ export default {
       this.dialogFireUser = true;
     }
     ,
-    fireAdmin() {
+    async fireAdmin() {
 
-      this.changeAdminData()
+      await this.changeAdminData()
 
-      this.$emit('fire-admin', this.adminData)
+      await this.$emit('fire-admin', this.adminData)
 
       this.dialogFireUser = false;
     }

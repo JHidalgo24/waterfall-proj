@@ -26,7 +26,7 @@
           Classes
         </v-list-item>
         <v-list-item to="/instructor">
-          Instructors
+          Instructor Page
         </v-list-item>
         <v-list-item to="/admins">
           Admin Page

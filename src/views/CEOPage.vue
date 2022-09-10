@@ -21,14 +21,15 @@
         <div>
 
           <!--User Page-->
-          <v-list-group >
+          <v-list-group>
             <template v-slot:activator>
               <v-list-item-content>
                 <v-list-item-title>Users</v-list-item-title>
               </v-list-item-content>
             </template>
-            <v-list-item  :key="user.userID" v-for="(user) in usersList" >
-              <UserEditComponent @remove-user="removeUser"  @add-user="addNewUser" @change-user="changeUser" :user="user"></UserEditComponent>
+            <v-list-item :key="user.userID" v-for="(user) in usersList">
+              <UserEditComponent @remove-user="removeUser" @add-user="addNewUser" @change-user="changeUser"
+                                 :user="user"></UserEditComponent>
             </v-list-item>
 
             <v-dialog width="400" v-model="dialogAddUser">
@@ -44,7 +45,7 @@
                     <v-container>
                       <v-row>
                         <v-col cols sm="12">
-                          <v-text-field required v-model="addedUser.firstName"  label="First Name"></v-text-field>
+                          <v-text-field required v-model="addedUser.firstName" label="First Name"></v-text-field>
                         </v-col>
 
                         <v-col cols sm="12">
@@ -58,31 +59,31 @@
                         </v-col>
 
                         <v-col cols sm="12">
-                          <v-text-field required v-model="addedUser.gender"   label="Gender"></v-text-field>
+                          <v-text-field required v-model="addedUser.gender" label="Gender"></v-text-field>
                         </v-col>
 
                         <v-col cols sm="12">
-                          <v-text-field required v-model="addedUser.jobTitle"  label="Job Tittle"></v-text-field>
+                          <v-text-field required v-model="addedUser.jobTitle" label="Job Tittle"></v-text-field>
                         </v-col>
                       </v-row>
 
                       <v-row>
                         <v-col cols sm="12">
-                          <v-text-field required v-model="addedUser.companyName"   label="Company Name"></v-text-field>
+                          <v-text-field required v-model="addedUser.companyName" label="Company Name"></v-text-field>
                         </v-col>
 
                         <v-col cols sm="12">
-                          <v-text-field required v-model="addedUser.email" type="email"   label="Email"></v-text-field>
+                          <v-text-field required v-model="addedUser.email" type="email" label="Email"></v-text-field>
                         </v-col>
 
                         <v-col cols sm="12">
-                          <v-text-field required v-model="addedUser.phoneNumber"  label="Phone Number"></v-text-field>
+                          <v-text-field required v-model="addedUser.phoneNumber" label="Phone Number"></v-text-field>
                         </v-col>
                       </v-row>
 
                       <v-card-actions>
                         <v-spacer></v-spacer>
-                        <v-btn @click="dialogAddUser = !dialogAddUser" >
+                        <v-btn @click="dialogAddUser = !dialogAddUser">
                           Cancel
                         </v-btn>
 
@@ -109,7 +110,6 @@
               </v-list-item>
             </v-list-item>
           </v-list-group>
-
 
 
           <!--Instructor Page-->
@@ -147,7 +147,7 @@
                     <v-container>
                       <v-row>
                         <v-col cols sm="12">
-                          <v-text-field required v-model="addedInstructor.firstName"  label="First Name"></v-text-field>
+                          <v-text-field required v-model="addedInstructor.firstName" label="First Name"></v-text-field>
                         </v-col>
 
                         <v-col cols sm="12">
@@ -161,7 +161,7 @@
                         </v-col>
 
                         <v-col cols sm="12">
-                          <v-text-field required v-model="addedInstructor.gender"   label="Gender"></v-text-field>
+                          <v-text-field required v-model="addedInstructor.gender" label="Gender"></v-text-field>
                         </v-col>
 
                         <v-col cols sm="12">
@@ -171,17 +171,19 @@
 
                       <v-row>
                         <v-col cols sm="12">
-                          <v-text-field required v-model="addedInstructor.phoneNumber" label="Phone Number"></v-text-field>
+                          <v-text-field required v-model="addedInstructor.phoneNumber"
+                                        label="Phone Number"></v-text-field>
                         </v-col>
 
                         <v-col cols sm="12">
-                          <v-text-field required v-model="addedInstructor.startDate" type="Start Date"   label="Email"></v-text-field>
+                          <v-text-field required v-model="addedInstructor.startDate" type="Start Date"
+                                        label="Email"></v-text-field>
                         </v-col>
                       </v-row>
 
                       <v-card-actions>
                         <v-spacer></v-spacer>
-                        <v-btn @click="dialogAddInstructor = !dialogAddInstructor" >
+                        <v-btn @click="dialogAddInstructor = !dialogAddInstructor">
                           Cancel
                         </v-btn>
 
@@ -199,7 +201,6 @@
           </v-list-group>
 
 
-
           <!--Course Page-->
           <v-list-group>
             <template v-slot:activator>
@@ -208,7 +209,8 @@
               </v-list-item-content>
             </template>
             <v-list-item :key="classItem.classID" v-for="(classItem) in classList">
-              <ClassEditComponent :users="usersList" @remove-course="removeCourse" @change-course="changeCourse" :courseThing="classItem"></ClassEditComponent>
+              <ClassEditComponent :users="usersList" @remove-course="removeCourse" @change-course="changeCourse"
+                                  :courseThing="classItem"></ClassEditComponent>
             </v-list-item>
 
             <v-dialog width="400" v-model="dialogAddCourse">
@@ -224,7 +226,9 @@
                     <v-container>
                       <v-row>
                         <v-col cols sm="12">
-                          <v-select required :items="instructorList.filter((c) => c.terminated !== true).map((a) => a.firstName + ' ' + a.lastName)" v-model="addedCourse.instructor"  label="Instructor"></v-select>
+                          <v-select required
+                                    :items="instructorList.filter((c) => c.terminated !== true).map((a) => a.firstName + ' ' + a.lastName)"
+                                    v-model="addedCourse.instructor" label="Instructor"></v-select>
                         </v-col>
 
                         <v-col cols sm="12">
@@ -238,47 +242,53 @@
                         </v-col>
 
                         <v-col cols sm="12">
-                          <v-text-field required v-model="addedCourse.startDate"  type="date" label="Start Date"></v-text-field>
+                          <v-text-field required v-model="addedCourse.startDate" type="date"
+                                        label="Start Date"></v-text-field>
                         </v-col>
 
                         <v-col cols sm="12">
-                          <v-text-field required v-model="addedCourse.endDate" type="date"  label="End Date"></v-text-field>
-                        </v-col>
-                      </v-row>
-
-                      <v-row>
-
-
-                        <v-col cols sm="12">
-                          <v-text-field required v-model="addedCourse.startTime" type="time"   label="Start Time"></v-text-field>
-                        </v-col>
-
-                        <v-col cols sm="12">
-                          <v-text-field required v-model="addedCourse.endTime" type="time" label="End Time"></v-text-field>
-                        </v-col>
-
-                        <v-col cols sm="12">
-                          <v-text-field required v-model="addedCourse.cost" type="number" value="390"   label="Cost"></v-text-field>
+                          <v-text-field required v-model="addedCourse.endDate" type="date"
+                                        label="End Date"></v-text-field>
                         </v-col>
                       </v-row>
 
                       <v-row>
+
+
                         <v-col cols sm="12">
-                          <v-text-field required v-model="addedCourse.maxSize"   label="Max Students"></v-text-field>
+                          <v-text-field required v-model="addedCourse.startTime" type="time"
+                                        label="Start Time"></v-text-field>
                         </v-col>
 
                         <v-col cols sm="12">
-                          <v-text-field required v-show="false" v-model="addedCourse.actual" disabled :value="addedCourse.maxSize" type="email"   label="Actual Size"></v-text-field>
+                          <v-text-field required v-model="addedCourse.endTime" type="time"
+                                        label="End Time"></v-text-field>
                         </v-col>
 
                         <v-col cols sm="12">
-                          <v-text-field required v-model="addedCourse.address"  label="Location"></v-text-field>
+                          <v-text-field required v-model="addedCourse.cost" type="number" value="390"
+                                        label="Cost"></v-text-field>
+                        </v-col>
+                      </v-row>
+
+                      <v-row>
+                        <v-col cols sm="12">
+                          <v-text-field required v-model="addedCourse.maxSize" label="Max Students"></v-text-field>
+                        </v-col>
+
+                        <v-col cols sm="12">
+                          <v-text-field required v-show="false" v-model="addedCourse.actual" disabled
+                                        :value="addedCourse.maxSize" type="email" label="Actual Size"></v-text-field>
+                        </v-col>
+
+                        <v-col cols sm="12">
+                          <v-text-field required v-model="addedCourse.address" label="Location"></v-text-field>
                         </v-col>
                       </v-row>
 
                       <v-card-actions>
                         <v-spacer></v-spacer>
-                        <v-btn @click="dialogAddCourse = !dialogAddCourse" >
+                        <v-btn @click="dialogAddCourse = !dialogAddCourse">
                           Cancel
                         </v-btn>
 
@@ -306,7 +316,6 @@
           </v-list-group>
 
 
-
           <!--Admin Page-->
 
           <v-list-group>
@@ -315,9 +324,9 @@
                 <v-list-item-title>Admins</v-list-item-title>
               </v-list-item-content>
             </template>
-            <v-list-item :key="admin.AdminID" v-for="(admin) in adminList">
+            <v-list-item :key="admin.adminID" v-for="(admin) in adminList">
               <AdminEditComponent @fire-admin="fireAdmin" @change-admin="changeAdmin"
-                                       :admin="admin"></AdminEditComponent>
+                                  :admin="admin"></AdminEditComponent>
             </v-list-item>
 
             <v-list-item>
@@ -343,7 +352,7 @@
                     <v-container>
                       <v-row>
                         <v-col cols sm="12">
-                          <v-text-field required v-model="addedAdmin.firstName"  label="First Name"></v-text-field>
+                          <v-text-field required v-model="addedAdmin.firstName" label="First Name"></v-text-field>
                         </v-col>
 
                         <v-col cols sm="12">
@@ -357,7 +366,7 @@
                         </v-col>
 
                         <v-col cols sm="12">
-                          <v-text-field required v-model="addedAdmin.gender"   label="Gender"></v-text-field>
+                          <v-text-field required v-model="addedAdmin.gender" label="Gender"></v-text-field>
                         </v-col>
 
                         <v-col cols sm="12">
@@ -371,13 +380,14 @@
                         </v-col>
 
                         <v-col cols sm="12">
-                          <v-text-field required v-model="addedAdmin.startDate" type="Start Date"   label="Email"></v-text-field>
+                          <v-text-field required v-model="addedAdmin.startDate" type="Start Date"
+                                        label="Email"></v-text-field>
                         </v-col>
                       </v-row>
 
                       <v-card-actions>
                         <v-spacer></v-spacer>
-                        <v-btn @click="dialogAddAdmin = !dialogAddAdmin" >
+                        <v-btn @click="dialogAddAdmin = !dialogAddAdmin">
                           Cancel
                         </v-btn>
 
@@ -413,7 +423,7 @@ import AdminItem from "@/Models/AdminItem";
 
 export default {
   name: "CEOPage",
-  components: {UserEditComponent, InstructorEditComponent, ClassEditComponent,AdminEditComponent},
+  components: {UserEditComponent, InstructorEditComponent, ClassEditComponent, AdminEditComponent},
 
   data() {
     return {
@@ -433,20 +443,20 @@ export default {
         new ClassItem(3, 'Class 3', '10/2/2022', '10/13/2022', '5:00pm', '7:00pm', 395, 25, '123 elm grove Dr', 'Cyndi Lambach', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus est expedita explicabo'),
         new ClassItem(4, 'Class 4', '10/15/2022', '10/23/2022', '5:00pm', '7:00pm', 395, 25, '123 elm grove Dr', 'Cyndi Lambach', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus est expedita explicabo'),
       ],
-      adminList:[
-        new AdminItem(1, 'Billy', 'Bob', 23, 'male', 'bbob@gmail.com', 14147680000, '2/2/2022'),
-        new AdminItem(2, 'Boh', 'Bob', 23, 'male', 'bbob@gmail.com', 14143680000, '2/2/2022')
+      adminList: [
+        new AdminItem(1.0, 'Billy', 'Bob', 23, 'male', 'bbob@gmail.com', 14147680000, '2/2/2022'),
+        new AdminItem(2.0, 'Boh', 'Bob', 23, 'male', 'bbob@gmail.com', 14143680000, '2/2/2022')
       ],
       dialog: false,
-      dialogAddUser:false,
-      dialogAddInstructor:false,
+      dialogAddUser: false,
+      dialogAddInstructor: false,
       dialogAddAdmin: false,
-      addedUser:new User('', '','','', '', '','','',''),
-      addedInstructor: new InstructorItem('', '','','','','','',''),
-      addedCourse:new ClassItem('','','','','','','','','','',''),
-      addedAdmin: new AdminItem('', '','','','','','',''),
-      missingInfo:false,
-      dialogAddCourse:false,
+      addedUser: new User('', '', '', '', '', '', '', '', ''),
+      addedInstructor: new InstructorItem('', '', '', '', '', '', '', ''),
+      addedCourse: new ClassItem('', '', '', '', '', '', '', '', '', '', ''),
+      addedAdmin: new AdminItem('', '', '', '', '', '', '', ''),
+      missingInfo: false,
+      dialogAddCourse: false,
 
     }
   },
@@ -461,40 +471,39 @@ export default {
 
       this.usersList = replacementList
     },
-    changeAdmin(admin){
+    changeAdmin(admin) {
 
+      console.log(admin.adminID)
       this.adminList[this.adminList.findIndex((obj => obj.adminID === admin.adminID))].changeAdmin(admin)
 
     },
-    addNewUser(){
-      let sortedList = this.usersList.sort(function(a, b) {
+    addNewUser() {
+      let sortedList = this.usersList.sort(function (a, b) {
         return a.userID - b.userID;
       });
 
       let newID = sortedList[this.usersList.length - 1].userID + 1;
 
-      if (this.addedUser.firstName === '' || this.addedUser.lastName === '' || this.addedUser.age === '' || this.addedUser.gender === '' || this.addedUser.jobTitle === '' || this.addedUser.email === '' || this.addedUser.phoneNumber === '' || this.addedUser.companyName === ''){
+      if (this.addedUser.firstName === '' || this.addedUser.lastName === '' || this.addedUser.age === '' || this.addedUser.gender === '' || this.addedUser.jobTitle === '' || this.addedUser.email === '' || this.addedUser.phoneNumber === '' || this.addedUser.companyName === '') {
         this.missingInfo = true;
         console.log(this.missingInfo)
-      }
-
-      else{
+      } else {
         console.log(this.missingInfo)
-        let tempUser = new User(newID, this.addedUser.firstName, this.addedUser.lastName, this.addedUser.age, this.addedUser.gender,this.addedUser.jobTitle, this.addedUser.email, this.addedUser.phoneNumber, this.addedUser.companyName)
+        let tempUser = new User(newID, this.addedUser.firstName, this.addedUser.lastName, this.addedUser.age, this.addedUser.gender, this.addedUser.jobTitle, this.addedUser.email, this.addedUser.phoneNumber, this.addedUser.companyName)
         this.usersList.push(tempUser)
         this.dialogAddUser = false;
       }
     },
-    removeUser(user){
+    removeUser(user) {
       this.usersList = this.usersList.filter(c => c.userID !== user.userID)
     },
 
-    addInstructor(){
-      let sortedStuff = this.instructorList.sort(function (x, y){
+    addInstructor() {
+      let sortedStuff = this.instructorList.sort(function (x, y) {
         return x.instructorID - y.instructorID;
       })
 
-      let newID = sortedStuff[this.instructorList.length -1].instructorID + 1;
+      let newID = sortedStuff[this.instructorList.length - 1].instructorID + 1;
       let tempInstructor = new InstructorItem(newID, this.addedInstructor.firstName, this.addedInstructor.lastName, this.addedInstructor.age, this.addedInstructor.gender, this.addedInstructor.email, this.addedInstructor.phoneNumber, this.addedInstructor.startDate)
       this.instructorList.push(tempInstructor)
       this.dialogAddInstructor = false;
@@ -511,7 +520,7 @@ export default {
 
 
     },
-    removeInstructor(Instructor){
+    removeInstructor(Instructor) {
 
       let replacementList = this.instructorList
 
@@ -523,7 +532,7 @@ export default {
       this.dialogAddUser = false
     }
     ,
-    changeCourse(course){
+    changeCourse(course) {
       let replacementList = this.classList
 
       let index = this.classList.findIndex((obj => obj.instructorID === course.instructorID));
@@ -534,12 +543,12 @@ export default {
 
 
     },
-    removeCourse(course){
+    removeCourse(course) {
       this.classList = this.classList.filter(x => x.classID !== course.classID)
     },
 
-    addNewCourse(){
-      let sortedList = this.classList.sort(function(a, b) {
+    addNewCourse() {
+      let sortedList = this.classList.sort(function (a, b) {
         return a.classID - b.classID;
       });
 
@@ -547,28 +556,25 @@ export default {
       console.log(newID, "cringe course newid")
 
       console.log(this.missingInfo)
-      let tempCourse = new classItem(newID, this.addedCourse.className, this.addedCourse.startDate, this.addedCourse.endDate, this.addedCourse.startTime,this.addedCourse.endTime, this.addedCourse.cost, this.addedCourse.maxSize, this.addedCourse.address,this.addedCourse.instructor, this.addedCourse.description)
+      let tempCourse = new classItem(newID, this.addedCourse.className, this.addedCourse.startDate, this.addedCourse.endDate, this.addedCourse.startTime, this.addedCourse.endTime, this.addedCourse.cost, this.addedCourse.maxSize, this.addedCourse.address, this.addedCourse.instructor, this.addedCourse.description)
       this.classList.push(tempCourse)
       this.dialogAddCourse = false;
     },
 
-    addNewAdmin(){
-      let sortedThingy = this.adminList.sort(function (a, b){
-        return a.adminID - b.adminID ;
-      });
-
-      let newID = sortedThingy[0].adminID;
+    addNewAdmin() {
 
 
-      console.log(newID,"bitch ass admin ID")
+      let newID = this.adminList[this.adminList.length - 1].adminID + 1
+
       let tempAdmin = new AdminItem(newID + 1, this.addedAdmin.firstName, this.addedAdmin.lastName, this.addedAdmin.age, this.addedAdmin.gender, this.addedAdmin.email, this.addedAdmin.phoneNumber, this.addedAdmin.startDate)
       this.adminList.push(tempAdmin)
       this.dialogAddAdmin = false;
     },
 
-    fireAdmin(admin){
-
-      this.adminList[this.adminList.findIndex((obj => obj.adminID === admin.adminID))].fireAdmin()
+    fireAdmin(admin) {
+      let index = this.adminList.findIndex((obj => obj.adminID === admin.adminID))
+      console.log(index)
+      this.adminList[index].fireAdmin()
 
       this.dialogAddAdmin = false
     }
