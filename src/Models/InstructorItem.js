@@ -11,15 +11,16 @@ class InstructorItem {
     terminationCause = ''
     terminated = false;
 
+    constructor(instructorID, firstName, lastName, age, gender, email, phoneNumber, startDate) {
+        this.instructorID = instructorID;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+        this.gender = gender;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.startDate = startDate;
 
-
-    constructor(instructorID, firstName, lastName, email, phoneNumber, startDate) {
-    this.instructorID = instructorID;
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.email = email;
-    this.phoneNumber = phoneNumber;
-    this.startDate = startDate
     }
 
     changeInstructor = (instructorChange) => {

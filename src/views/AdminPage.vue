@@ -1,7 +1,6 @@
 <template>
   <div style="text-align: center">
     <v-row>
-
       <v-col style="justify-content: center" cols sm="12" lg="4">
         <v-card elevation="1" class="justify-center pa-2">
           <h2 style="" class="pa-4">Admin Page</h2>
@@ -17,8 +16,8 @@
           </v-card-actions>
         </v-card>
       </v-col>
-      <v-col cols sm="12" lg="8">
 
+      <v-col cols sm="12" lg="8">
         <div>
           <v-list-group>
             <template v-slot:activator>
@@ -107,8 +106,9 @@
                 </h4>
               </v-list-item>
             </v-list-item>
-
           </v-list-group>
+
+
           <v-list-group>
             <template v-slot:activator>
               <v-list-item-content>
@@ -195,6 +195,8 @@
             </v-dialog>
 
           </v-list-group>
+
+
           <v-list-group>
             <template v-slot:activator>
               <v-list-item-content>
@@ -206,12 +208,110 @@
                                   :courseThing="classItem"></ClassEditComponent>
             </v-list-item>
 
+            <v-dialog width="400" v-model="dialogAddCourse">
+              <v-card>
+                <v-card-title class="text-h5">Adding Class</v-card-title>
+
+                <v-card-text>
+                  <v-form>
+                    <h4 style="color: red" v-show="missingInfo">
+                      You have missing information
+                    </h4>
+
+                    <v-container>
+                      <v-row>
+                        <v-col cols sm="12">
+                          <v-select required
+                                    :items="instructorList.filter((c) => c.terminated !== true).map((a) => a.firstName + ' ' + a.lastName)"
+                                    v-model="addedCourse.instructor" label="Instructor"></v-select>
+                        </v-col>
+
+                        <v-col cols sm="12">
+                          <v-textarea required v-model="addedCourse.description" label="Description"></v-textarea>
+                        </v-col>
+                      </v-row>
+
+                      <v-row>
+                        <v-col cols sm="12">
+                          <v-text-field required v-model="addedCourse.className" label="Class Name"></v-text-field>
+                        </v-col>
+
+                        <v-col cols sm="12">
+                          <v-text-field required v-model="addedCourse.startDate" type="date"
+                                        label="Start Date"></v-text-field>
+                        </v-col>
+
+                        <v-col cols sm="12">
+                          <v-text-field required v-model="addedCourse.endDate" type="date"
+                                        label="End Date"></v-text-field>
+                        </v-col>
+                      </v-row>
+
+                      <v-row>
+
+
+                        <v-col cols sm="12">
+                          <v-text-field required v-model="addedCourse.startTime" type="time"
+                                        label="Start Time"></v-text-field>
+                        </v-col>
+
+                        <v-col cols sm="12">
+                          <v-text-field required v-model="addedCourse.endTime" type="time"
+                                        label="End Time"></v-text-field>
+                        </v-col>
+
+                        <v-col cols sm="12">
+                          <v-text-field required v-model="addedCourse.cost" type="number" value="390"
+                                        label="Cost"></v-text-field>
+                        </v-col>
+                      </v-row>
+
+                      <v-row>
+                        <v-col cols sm="12">
+                          <v-text-field required v-model="addedCourse.maxSize" label="Max Students"></v-text-field>
+                        </v-col>
+
+                        <v-col cols sm="12">
+                          <v-text-field required v-show="false" v-model="addedCourse.actual" disabled
+                                        :value="addedCourse.maxSize" type="email" label="Actual Size"></v-text-field>
+                        </v-col>
+
+                        <v-col cols sm="12">
+                          <v-text-field required v-model="addedCourse.address" label="Location"></v-text-field>
+                        </v-col>
+                      </v-row>
+
+                      <v-card-actions>
+                        <v-spacer></v-spacer>
+                        <v-btn @click="dialogAddCourse = !dialogAddCourse">
+                          Cancel
+                        </v-btn>
+
+                        <v-btn @click="addNewCourse">
+                          Save
+                        </v-btn>
+                      </v-card-actions>
+
+                    </v-container>
+                  </v-form>
+                </v-card-text>
+              </v-card>
+            </v-dialog>
+            <v-list-item>
+              <v-list-item>
+                <h4>Add Course</h4>
+                <v-spacer></v-spacer>
+                <h4>
+                  <v-btn @click="dialogAddCourse = !dialogAddCourse" text>
+                    <v-icon>mdi-plus</v-icon>
+                  </v-btn>
+                </h4>
+              </v-list-item>
+            </v-list-item>
           </v-list-group>
         </div>
       </v-col>
     </v-row>
-
-
   </div>
 </template>
 
@@ -235,10 +335,10 @@ export default {
         new User(2, 'Mark', 'Woe', 30, 'Male', 'Software Engineer', 'markwoe@gmail.com', '14143768889', 'Google'),
         new User(3, 'Mary', 'Foe', 25, 'Female', 'Software Engineer', 'maryfoe@gmail.com', '14143768887', 'Google')
       ],
-      instructorList:[
-          new InstructorItem(1, 'James', 'Johnson', 'jjohnson@gmail.com', 14144558888, '1/25/2000'),
-          new InstructorItem(2, 'Robert', 'Johnson', 'rjohnson@gmail.com', 14144558888, '1/25/2000'),
-          new InstructorItem(3, 'John', 'Johnson', 'jjohnson@gmail.com', 14144558888, '1/25/2000')
+      instructorList: [
+        new InstructorItem(1, 'James', 'Johnson', '34', 'male', 'jjohnson@gmail.com', 14144558888, '1/25/2000'),
+        new InstructorItem(2, 'Robert', 'Johnson', '44', 'male', 'rjohnson@gmail.com', 14144558888, '1/25/2000'),
+        new InstructorItem(3, 'John', 'Johnson', '24', 'male', 'jjohnson@gmail.com', 14144558888, '1/25/2000')
       ],
       classList: [
         new ClassItem(1, 'Class 1', '9/10/2022', '9/22/2022', '5:00pm', '7:00pm', 395, 25, '123 elm grove Dr', 'Cyndi Lambach', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus est expedita explicabo'),
