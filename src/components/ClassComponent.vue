@@ -6,6 +6,7 @@
       </v-card-title>
 
       <v-card-text>
+
         <h4><b>Instructor:</b> {{ classThing.instructor }}</h4>
         <p>
           {{ classThing.description }}
@@ -21,7 +22,7 @@
         <v-btn outlined @click="dialogMoreInfo = !dialogMoreInfo">
           <v-icon>mdi-arrow-expand</v-icon>
         </v-btn>
-        <v-btn @click="addToCart" outlined >
+        <v-btn @click="addToCart" outlined>
           Add to Cart
         </v-btn>
       </v-card-actions>
@@ -34,8 +35,8 @@
               <v-row>
                 <v-col>
                   <v-img width="15vw" contain
-                         src="https://cdn.inst-fs-iad-prod.inscloudgate.net/2846b1b6-e3a7-4899-9506-9f1937e0a415?token=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCIsImtpZCI6ImNkbiJ9.eyJyZXNvdXJjZSI6Ii8yODQ2YjFiNi1lM2E3LTQ4OTktOTUwNi05ZjE5MzdlMGE0MTUiLCJ0ZW5hbnQiOiJjYW52YXMiLCJ1c2VyX2lkIjoiMTA5NTEwMDAwMDAwMDYyMjc2IiwiaWF0IjoxNjYyNjMyMTYzLCJleHAiOjE2NjI3MTg1NjN9.rvsw96N-91gi1KUidHQ2N9N5HimbcHMNU9Isz6yDXKW4hvoeZrDKdfUFR0EjmRgtW-uWZt19TPbhlGkeMrCf2w&content_type=image%2Fpng"></v-img>
-                  <h3>Instructor: {{classThing.instructor}}</h3>
+                         src="https://www.pngitem.com/pimgs/m/130-1300305_user-female-alt-icon-default-user-image-png.png"></v-img>
+                  <h3>Instructor: {{ classThing.instructor }}</h3>
                 </v-col>
 
                 <v-col>
@@ -57,7 +58,7 @@
                   <h3 class="ma-3">
                     Cost
                     <br>
-                    {{classThing.cost}}
+                    {{ classThing.cost }}
                   </h3>
                 </v-col>
               </v-row>
@@ -86,9 +87,9 @@ export default {
       dialogMoreInfo: false
     }
   },
-  methods:{
-    addToCart(){
-      this.$emit('add-class',this.classThing)
+  methods: {
+    addToCart() {
+      this.$emit('add-class', this.classThing)
     }
   }
 }
