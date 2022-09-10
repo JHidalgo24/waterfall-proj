@@ -17,12 +17,12 @@
       </v-card-text>
 
       <v-card-actions>
-
+        <v-btn color="red" outlined @click="removeFromCart">
+          <v-icon>mdi-delete</v-icon>
+        </v-btn>
+        <v-spacer></v-spacer>
         <v-btn outlined @click="dialogMoreInfo = !dialogMoreInfo">
           <v-icon>mdi-arrow-expand</v-icon>
-        </v-btn>
-        <v-btn @click="addToCart" outlined >
-          Add to Cart
         </v-btn>
       </v-card-actions>
 
@@ -73,7 +73,7 @@
 
 <script>
 export default {
-  name: "ClassComponent",
+  name: "CartComponent",
   props: {
     classThing: {
       type: Object,
@@ -87,8 +87,8 @@ export default {
     }
   },
   methods:{
-    addToCart(){
-      this.$emit('add-class',this.classThing)
+    removeFromCart(){
+      this.$emit('remove-cart',this.classThing)
     }
   }
 }

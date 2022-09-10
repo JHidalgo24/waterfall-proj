@@ -25,11 +25,14 @@
         <v-list-item to="/classes">
           Classes
         </v-list-item>
-        <v-list-item>
+        <v-list-item to="/instructor">
           Instructors
         </v-list-item>
         <v-list-item to="/admins">
           Admin Page
+        </v-list-item>
+        <v-list-item to="/CEO">
+          CEO Page
         </v-list-item>
         <v-list-item to="/moneythingy">
           Money Breakdown
@@ -57,3 +60,11 @@ export default {
 </script>
 
 
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+  font-family: 'Poppins', sans-serif;
+}
+
+</style>

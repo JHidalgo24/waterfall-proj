@@ -11,6 +11,8 @@
           <v-card-text>
             <h1>Willy Junior</h1>
             <h2>Classes Taken: 305</h2>
+            <h2 style="color: red">Non-Payments: 2 Orders</h2>
+            <h4 style="color: orange">Warning: One more non-payment and your account will be locked, and you will have to appeal it with customer support</h4>
           </v-card-text>
           <v-spacer></v-spacer>
           <v-card-actions class="card-actions text-right">

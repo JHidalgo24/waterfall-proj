@@ -16,6 +16,7 @@ class ClassItem{
     maxSize = 25;
     actual = 19;
     address = '';
+    users = [];
 
 
     constructor(classID, className, startDate, endDate, startTime, endTime, cost, maxSize, address, instructor, description) {
@@ -30,6 +31,21 @@ class ClassItem{
         this.address = address;
         this.instructor = instructor
         this.description = description
+    }
+
+
+    changeCourse = (courseChange) => {
+
+        this.className = courseChange.className;
+        this.startDate = courseChange.startDate;
+        this.startTime = courseChange.startTime;
+        this.endTime = courseChange.endTime;
+        this.endDate = courseChange.endDate;
+        this.cost = courseChange.cost;
+        this.maxSize =courseChange. maxSize;
+        this.address = courseChange.address;
+        this.instructor = courseChange.instructor
+        this.description = courseChange.description
     }
 }
 

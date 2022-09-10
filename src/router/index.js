@@ -6,6 +6,8 @@ import RegisterPage from "@/views/RegisterPage";
 import ClassPage from "@/views/ClassPage";
 import MoneyPage from "@/views/MoneyPage";
 import AdminPage from "@/views/AdminPage";
+import InstructorPage from "@/views/InstructorPage";
+import CEOPage from "@/views/CEOPage";
 
 Vue.use(VueRouter)
 
@@ -14,8 +16,10 @@ const routes = [
   {path:'/account', component: accountPage},
   {path: '/register', component: RegisterPage},
   {path:'/classes',component: ClassPage},
-  {path:'/moneythingy',component: MoneyPage},
-  {path:'/admins',component: AdminPage}
+  {path:'/money-thingy',component: MoneyPage},
+  {path:'/admins',component: AdminPage},
+  {path:'/instructor',component: InstructorPage},
+  {path:'/CEO',component: CEOPage}
 ]
 
 const router = new VueRouter({
