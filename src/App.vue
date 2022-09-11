@@ -37,10 +37,10 @@
         <v-list-item to="/CEO">
           CEO Page
         </v-list-item>
-        <v-list-item to="/moneythingy">
+        <v-list-item to="/money-thingy">
           Money Breakdown
         </v-list-item>
-        <v-list-item>
+        <v-list-item to="/about-us">
           About Us
         </v-list-item>
       </v-list-item-group>

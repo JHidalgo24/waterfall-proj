@@ -9,6 +9,7 @@ import AdminPage from "@/views/AdminPage";
 import InstructorPage from "@/views/InstructorPage";
 import CEOPage from "@/views/CEOPage";
 import UserCourses from "@/views/UserCourses";
+import AboutUsPage from "@/views/AboutUsPage";
 
 Vue.use(VueRouter)
 
@@ -21,7 +22,8 @@ const routes = [
   {path:'/admins',component: AdminPage},
   {path:'/instructor',component: InstructorPage},
   {path:'/CEO',component: CEOPage},
-  {path:'/user-courses',component: UserCourses}
+  {path:'/user-courses',component: UserCourses},
+  {path:'/about-us',component: AboutUsPage}
 ]
 
 const router = new VueRouter({
