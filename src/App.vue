@@ -54,7 +54,7 @@
         </v-list-item>
       </v-list-item-group>
     </v-navigation-drawer>
-    <v-main>
+    <v-main class="mb-16">
       <router-view/>
     </v-main>
 

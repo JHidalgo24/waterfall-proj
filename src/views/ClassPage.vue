@@ -147,6 +147,7 @@
           class="mt-12"
           rounded
           fixed
+          style="z-index: 12"
           bottom
           right
           depressed
