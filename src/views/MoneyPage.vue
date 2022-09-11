@@ -38,7 +38,7 @@
         </v-card>
       </v-col>
     </v-row>
-    <v-row>
+    <v-row class="ma-0">
       <v-col cols sm="12" lg="8">
         <v-card>
           <h1 class="text-center pa-11">Jan-Dec Lost Users</h1>
