@@ -63,7 +63,7 @@
       </v-card>
     </v-col>
 
-    <v-col>
+    <v-col cols sm="12" lg="6">
       <v-card>
         <v-card-title>Specialty</v-card-title>
         <v-card-subtitle><strong>Helping you grow</strong></v-card-subtitle>
