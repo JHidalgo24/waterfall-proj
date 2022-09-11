@@ -96,8 +96,19 @@ can also modify courses and users and delete them.
 The Admin Page can do everything the CEO Page can with some exceptions. The admin can fire instructors but not other
 admins. This is the only functionality that they lose.
 
-The Instructors have the same as Admin except they can not fire Admins or other instructors or modify them. They can
+The Instructors have the same functionality as Admin except they can not fire Admins or other instructors or modify
+them. They can
 only Modify or change other Users and courses
+
+
+***
+
+## Money Breakdown Page
+
+***
+The money breakdown page gathers data from the database and shows you how many losers we have gained how many we have
+lost and the income of that month. There is also a table showing what classes were used the most and how many times they
+have been taken in total. This will help CK learn which classes to add based on how many people have taken it.
 
 
 ***
@@ -125,10 +136,12 @@ only Modify or change other Users and courses
 ### Contact
 
 ```
-1. First Web-Developer
-    - 
-2. Second Web-Developer
+1. Web-Developer
+    - jhidalgo2@my.wctc.edu
+2. Web-Developer
     - dsolanoreyes@my.wctc.edu
-3. Third Web-Developer
-    - 
+3. Web-Developer
+    - ajakus@my.wctc.edu
+4. Database-Speaclist
+    -ascherf2@my.wctc.edu
 ```

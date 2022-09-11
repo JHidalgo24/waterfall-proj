@@ -24,10 +24,11 @@
         <v-icon>mdi-account</v-icon>
 
       </v-btn>
-      <v-btn text to="/register">
+      <v-btn  text to="/register">
         <v-icon>mdi-account-plus</v-icon>
-
       </v-btn>
+
+
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
     </v-app-bar>
     <v-navigation-drawer right app v-model="drawer" temporary>
@@ -70,14 +71,14 @@
         <v-col cols sm="12" lg="4">
           <h3 class=" mb-3 text-center">Social Media Links</h3>
 
-              <v-btn  depressed ><v-icon>mdi-facebook</v-icon> Facebook</v-btn>
+              <v-btn width="100%"  depressed ><v-icon>mdi-facebook</v-icon> Facebook</v-btn>
 
-              <v-btn  depressed ><v-icon>mdi-twitter</v-icon> Twitter</v-btn>
+              <v-btn  width="100%" depressed ><v-icon>mdi-twitter</v-icon> Twitter</v-btn>
 
-              <v-btn  depressed><v-icon>mdi-youtube</v-icon> Youtube</v-btn>
+              <v-btn  width="100%"  depressed><v-icon>mdi-youtube</v-icon> Youtube</v-btn>
 
 
-              <v-btn  depressed><v-icon>mdi-linkedin</v-icon> Linkedin</v-btn>
+              <v-btn width="100%"  depressed><v-icon>mdi-linkedin</v-icon> Linkedin</v-btn>
 
 
         </v-col>
