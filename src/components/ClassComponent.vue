@@ -6,7 +6,6 @@
       </v-card-title>
 
       <v-card-text>
-
         <h4><b>Instructor:</b> {{ classThing.instructor }}</h4>
         <p>
           {{ classThing.description }}
@@ -21,7 +20,6 @@
       </v-card-text>
 
       <v-card-actions>
-
         <v-btn outlined @click="dialogMoreInfo = !dialogMoreInfo">
           <v-icon>mdi-arrow-expand</v-icon>
         </v-btn>
@@ -71,8 +69,6 @@
           </v-card-text>
         </v-card>
       </v-dialog>
-
-
     </v-card>
   </div>
 </template>

@@ -213,14 +213,10 @@ export default {
         this.classCart.push(classGettingAdded)
       }
 
-
     },
     removeClassFromCart(classGettingRemoved) {
-
       this.classCart = this.classCart.filter((c => c.classID !== classGettingRemoved.classID))
-
       console.log(this.classCart)
-
     }
   }
 }

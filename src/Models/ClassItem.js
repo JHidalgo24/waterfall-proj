@@ -1,5 +1,4 @@
 class ClassItem{
-
     classID = '';
 
     //general info
@@ -9,6 +8,7 @@ class ClassItem{
     startDate = '';
     endDate = '';
     cost = 395;
+    reviews = [];
 
     //more info
     startTime = '';
@@ -33,9 +33,7 @@ class ClassItem{
         this.description = description
     }
 
-
     changeCourse = (courseChange) => {
-
         this.className = courseChange.className;
         this.startDate = courseChange.startDate;
         this.startTime = courseChange.startTime;
