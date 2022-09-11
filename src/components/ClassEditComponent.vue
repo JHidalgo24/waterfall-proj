@@ -60,6 +60,10 @@
                 <v-col>
                   <v-select v-model="courseData.users" multiple :items="users.map((a) => a.firstName + ' ' + a.lastName)"></v-select>
                 </v-col>
+
+                <v-card-text :key="user.userID" v-for="user in courseData.users">
+                  <p>{{user}}</p>
+                </v-card-text>
               </v-row>
 
               <v-card-actions>

@@ -8,6 +8,7 @@ import MoneyPage from "@/views/MoneyPage";
 import AdminPage from "@/views/AdminPage";
 import InstructorPage from "@/views/InstructorPage";
 import CEOPage from "@/views/CEOPage";
+import UserCourses from "@/views/UserCourses";
 
 Vue.use(VueRouter)
 
@@ -19,7 +20,8 @@ const routes = [
   {path:'/money-thingy',component: MoneyPage},
   {path:'/admins',component: AdminPage},
   {path:'/instructor',component: InstructorPage},
-  {path:'/CEO',component: CEOPage}
+  {path:'/CEO',component: CEOPage},
+  {path:'/user-courses',component: UserCourses}
 ]
 
 const router = new VueRouter({

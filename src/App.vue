@@ -25,6 +25,9 @@
         <v-list-item to="/classes">
           Classes
         </v-list-item>
+        <v-list-item to="/user-courses">
+          My Schedule
+        </v-list-item>
         <v-list-item to="/instructor">
           Instructor Page
         </v-list-item>
