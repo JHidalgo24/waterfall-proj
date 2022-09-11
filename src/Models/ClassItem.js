@@ -47,6 +47,12 @@ class ClassItem{
         this.instructor = courseChange.instructor
         this.description = courseChange.description
     }
+
+    getReviews = () => {return this.reviews}
+
+    addReview = (reviewObject) => {
+        this.reviews.push(reviewObject)
+    }
 }
 
 export default ClassItem

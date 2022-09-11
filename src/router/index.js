@@ -10,6 +10,7 @@ import InstructorPage from "@/views/InstructorPage";
 import CEOPage from "@/views/CEOPage";
 import UserCourses from "@/views/UserCourses";
 import AboutUsPage from "@/views/AboutUsPage";
+import CourseReviewPage from "@/views/CourseReviewPage";
 
 Vue.use(VueRouter)
 
@@ -23,7 +24,8 @@ const routes = [
   {path:'/instructor',component: InstructorPage},
   {path:'/CEO',component: CEOPage},
   {path:'/user-courses',component: UserCourses},
-  {path:'/about-us',component: AboutUsPage}
+  {path:'/about-us',component: AboutUsPage},
+  {path:'/review-courses',component: CourseReviewPage}
 ]
 
 const router = new VueRouter({

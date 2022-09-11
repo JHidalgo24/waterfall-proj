@@ -11,21 +11,22 @@
 
       <router-link style="text-underline: none; text-decoration: none; color: inherit" to="/" text color="black"
                    elevation="0">
-        <span>
-        <v-icon>mdi-book</v-icon>
-        CK Training
-      </span>
+        <div class="d-inline-flex">
+        <v-img contain width="25" src="../src/assets/owl.png"></v-img>
+        &nbsp;
+          <h3>CK Teaching</h3>
+      </div>
       </router-link>
       &nbsp;
 
       <v-spacer></v-spacer>
       <v-btn text to="/account">
         <v-icon>mdi-account</v-icon>
-        Sign-in
+
       </v-btn>
       <v-btn text to="/register">
         <v-icon>mdi-account-plus</v-icon>
-        Register
+
       </v-btn>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
     </v-app-bar>
@@ -36,6 +37,9 @@
         </v-list-item>
         <v-list-item to="/user-courses">
           My Schedule
+        </v-list-item>
+        <v-list-item to="/review-courses">
+          Review Past Classes
         </v-list-item>
         <v-list-item to="/instructor">
           Instructor Page

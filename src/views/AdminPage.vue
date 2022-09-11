@@ -1,6 +1,6 @@
 <template>
   <div style="text-align: center">
-    <v-row>
+    <v-row class="ma-0">
       <v-col style="justify-content: center" cols sm="12" lg="4">
         <v-card elevation="1" class="justify-center pa-2">
           <h2 style="" class="pa-4">Admin Page</h2>

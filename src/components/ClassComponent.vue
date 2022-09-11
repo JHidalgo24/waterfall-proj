@@ -15,6 +15,9 @@
           <b>Start</b> {{ classThing.startDate }} - <b>End</b> {{ classThing.endDate }}
         </p>
         <p> {{ classThing.actual }}/{{ classThing.maxSize }} Open Seats</p>
+        <p>
+          Rating: {{ rating}} / 5
+        </p>
       </v-card-text>
 
       <v-card-actions>
@@ -60,6 +63,8 @@
                     <br>
                     {{ classThing.cost }}
                   </h3>
+
+                  <h3 class="ma-3">Rating: {{rating}} / 5</h3>
                 </v-col>
               </v-row>
             </v-container>
@@ -84,7 +89,8 @@ export default {
   data() {
     return {
       dialogRegister: false,
-      dialogMoreInfo: false
+      dialogMoreInfo: false,
+      rating:Math.floor(Math.random() * 5) + 1
     }
   },
   methods: {
