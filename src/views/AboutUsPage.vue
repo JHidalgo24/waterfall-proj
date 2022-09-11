@@ -1,11 +1,12 @@
 <template>
 <div>
+
   <v-row class="ma-0">
-    <v-col cols sm="12" lg="6">
-      <v-parallax src="https://tuiopay.com/wp-content/uploads/2018/12/OJXK980-846x846.jpg"></v-parallax>
+    <v-col cols sm="12" lg="4">
+      <v-img contain src="https://tuiopay.com/wp-content/uploads/2018/12/OJXK980-846x846.jpg"></v-img>
     </v-col>
 
-    <v-col cols sm="12" lg="6">
+    <v-col cols sm="12" lg="8">
       <v-card elevation="0">
         <v-card-title>
           Teaching With Purpose
@@ -31,7 +32,7 @@
     </v-col>
   </v-row>
 
-  <v-row>
+  <v-row class="ma-0">
     <v-col cols lg="3"></v-col>
 
     <v-col cols sm="12" lg="6">
@@ -41,8 +42,8 @@
     <v-col cols lg="3"></v-col>
   </v-row>
 
-  <v-row>
-    <v-col>
+  <v-row class="ma-0">
+    <v-col cols sm="12" lg="6">
       <v-card>
         <v-card-title>Training</v-card-title>
         <v-card-subtitle><strong>Being a student again</strong></v-card-subtitle>

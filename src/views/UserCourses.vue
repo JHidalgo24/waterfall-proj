@@ -51,8 +51,7 @@
               :type="type"
               :events="events"
               :event-overlap-threshold="30"
-              :event-color="getEventColor"
-              @change="getEvents"
+
           ></v-calendar>
         </v-sheet>
       </div>
