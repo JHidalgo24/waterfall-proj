@@ -1,23 +1,24 @@
 <template>
   <div style="text-align: center">
     <v-row class="ma-0">
-      <v-col style="justify-content: center" cols sm="12" lg="4">
+      <v-col style="justify-content: center" cols sm="12" lg="2">
         <v-card elevation="1" class="justify-center pa-2">
           <h2 style="" class="pa-4">CEO Page</h2>
 
           <v-card-text>
             <h1></h1>
           </v-card-text>
-          <v-img max-height="20vw" contain src="https://miro.medium.com/max/2400/1*P0RngeWM4C33v5p3lBs2vw.png"></v-img>
-          <h2 style="margin: 15px">Big Boss</h2>
-          <p>Level 100 Boss</p>
+          <v-img max-height="50vh" contain src="https://cdn.frankerfacez.com/emoticon/418189/4"></v-img>
+          <h2 style="margin: 15px">CK (Big Boss)</h2>
+          <v-chip>Email</v-chip>
+          <p>ck@ckteaching.com</p>
           <v-card-actions class="card-actions text-right">
             <v-spacer></v-spacer>
           </v-card-actions>
         </v-card>
       </v-col>
 
-      <v-col cols sm="12" lg="8">
+      <v-col cols sm="12" lg="10">
         <div>
 
           <!--User Page-->

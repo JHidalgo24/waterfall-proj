@@ -1,23 +1,24 @@
 <template>
   <div style="text-align: center">
     <v-row class="ma-0">
-      <v-col style="justify-content: center" cols sm="12" lg="4">
+      <v-col style="justify-content: center" cols sm="12" lg="2">
         <v-card elevation="1" class="justify-center pa-2">
           <h2 style="" class="pa-4">Instructor Page</h2>
 
           <v-card-text>
             <h1></h1>
           </v-card-text>
-          <v-img max-height="20vw" contain src="https://c.tenor.com/WDqKGAcLL4QAAAAC/nerdge.gif"></v-img>
+          <v-img max-height="50vh" contain src="https://cdn.frankerfacez.com/emoticon/437884/4"></v-img>
           <h2 style="margin: 15px">Jimmy John</h2>
-          <p>The Alamo</p>
+          <v-chip>Email</v-chip>
+          <p>jimmyjohn@ckteaching.com</p>
           <v-card-actions class="card-actions text-right">
             <v-spacer></v-spacer>
           </v-card-actions>
         </v-card>
       </v-col>
 
-      <v-col cols sm="12" lg="8">
+      <v-col cols sm="12" lg="10">
         <div>
           <v-list-group >
             <template v-slot:activator>

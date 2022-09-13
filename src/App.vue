@@ -31,7 +31,7 @@
 
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
     </v-app-bar>
-    <v-navigation-drawer right app v-model="drawer" temporary>
+    <v-navigation-drawer style="z-index: 14" right app v-model="drawer" temporary>
       <v-list-item-group>
         <v-list-item to="/classes">
           Classes
