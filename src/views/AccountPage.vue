@@ -7,7 +7,13 @@
       <v-col style="justify-content: center" cols sm="12" lg="4">
         <v-card class="justify-center pa-2">
           <h2 style="" class="pa-4">Account info</h2>
-          <v-img src="https://c.tenor.com/wGHHJopBxjsAAAAC/pepe-sadge-cry.gif"></v-img>
+          <v-row>
+            <v-col></v-col>
+            <v-col>          <v-img width="50vh"
+                                    src="https://cdn.betterttv.net/emote/603451b77c74605395f3295d/3x"></v-img>
+            </v-col>
+            <v-col></v-col>
+          </v-row>
           <v-card-text>
             <h1>Willy Junior</h1>
             <h2>Classes Taken: 305</h2>
