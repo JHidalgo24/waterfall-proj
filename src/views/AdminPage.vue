@@ -8,7 +8,7 @@
           <v-card-text>
             <h1></h1>
           </v-card-text>
-          <v-img max-height="50vw" contain src="https://cdn.frankerfacez.com/emoticon/131597/4"></v-img>
+          <v-img max-height="50vh" contain src="https://cdn.frankerfacez.com/emoticon/131597/4"></v-img>
           <h2 style="margin: 15px">James Wheezy</h2>
           <v-chip>Email</v-chip>
           <p>wheezyadmin@ckteaching.com</p>
