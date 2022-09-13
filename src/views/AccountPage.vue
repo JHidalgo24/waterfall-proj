@@ -1,6 +1,6 @@
 <template>
   <div style="text-align: center">
-    <v-row>
+    <v-row class="ma-0">
       <v-col cols sm="12" lg="4">
 
       </v-col>
