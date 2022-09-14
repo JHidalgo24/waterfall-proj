@@ -140,6 +140,6 @@ have been taken in total. This will help CK learn which classes to add based on 
     - dsolanoreyes@my.wctc.edu
 3. Web-Developer
     - ajakus@my.wctc.edu
-4. Database-Speaclist
+4. Database-Specialist
     -ascherf2@my.wctc.edu
 ```
